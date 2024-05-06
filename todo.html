@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Animation</title>
+    <link rel="stylesheet" href="./todo.css">
+</head>
+
+<body>
+
+    <aside style="display: none" id="js-banner" class="banner">
+        <div class="banner__inner">
+            This browser currently doesn't support View Transitions API. Use Chrome 111 or newer version to view the
+            example.
+        </div>
+    </aside>
+    <h1>Calvin's super-awesome to-do list</h1>
+    <section class="grid">
+        <article class="col">
+            <h2>🤔 To-do</h2>
+            <ul>
+                <li id="card-1" style="--card-color: #b9fbc0">
+                    <div class="title">Watch cartoons</div>
+                    <div class="card-controls">
+                        <button onclick="moveCard(true)">👍</button>
+                        <button onclick="moveCard(false)">👎</button>
+                    </div>
+                </li>
+                <li id="card-2" style="--card-color: #ffcfd2">
+                    <div class="title">Play Calvinball</div>
+                    <div class="card-controls">
+                        <button onclick="moveCard(true)">👍</button>
+                        <button onclick="moveCard(false)">👎</button>
+                    </div>
+                </li>
+                <li id="card-3" style="--card-color: #98f5e1">
+                    <div class="title">Build a Transmogrifier</div>
+                    <div class="card-controls">
+                        <button onclick="moveCard(true)">👍</button>
+                        <button onclick="moveCard(false)">👎</button>
+                    </div>
+                </li>
+                <li id="card-4" style="--card-color: #cfbaf0">
+                    <div class="title">Pull a prank on Hobbes</div>
+                    <div class="card-controls">
+                        <button onclick="moveCard(true)">👍</button>
+                        <button onclick="moveCard(false)">👎</button>
+                    </div>
+                </li>
+
+                <li id="card-5" style="--card-color: #fbf8cc">
+                    <div class="title">Go on a treasure hunt</div>
+                    <div class="card-controls">
+                        <button onclick="moveCard(true)">👍</button>
+                        <button onclick="moveCard(false)">👎</button>
+                    </div>
+                </li>
+            </ul>
+        </article>
+
+        <article class="col col-complete">
+            <h2>😊 Done!</h2>
+            <ul id="js-list-done">
+                <li style="--card-color: #8eecf5">Wake up early</li>
+                <li style="--card-color: #f1c0e8">
+                    Have sugar bombs for breakfast
+                </li>
+            </ul>
+        </article>
+
+        <article class="col col-complete">
+            <h2>😒 Won't-do</h2>
+            <ul id="js-list-not-done">
+                <!-- <li style="--card-color: #eaeaea">Clean my room</li>
+                <li style="--card-color: #eaeaea">Go to sleep on time</li>
+                <li style="--card-color: #eaeaea">Play with Susie</li> -->
+            </ul>
+        </article>
+    </section>
+    <script src="./todo.js"></script>
+</body>
+
+</html>
