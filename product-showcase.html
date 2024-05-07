@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <link rel="stylesheet" href="./product-showcase.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>View Transition Practice</h2>
+    </header>
+
+    <main>
+        <div class="main-view" id="main-image">
+            <h1>Demo Product Showcase</h1>
+            <a href="#">Learn More</a>
+            <img id="list-img-0" src="./images/car-1.webp" alt="car-1" style="view-transition-name: car-0;"
+                onclick="moveCar(0)">
+
+        </div>
+        <div class="img-container" id="list-img">
+            <img id="list-img-1" src="./images/car-2.webp" alt="car 2" onclick="moveCar(1)">
+            <img id="list-img-2" src="./images/car-3.webp" alt="car 3" onclick="moveCar(2)">
+            <img id="list-img-3" src="./images/car-4.jpeg" alt="car 4" onclick="moveCar(3)">
+            <img id="list-img-4" src="./images/car-5.webp" alt="car 4" onclick="moveCar(4)">
+        </div>
+    </main>
+
+    <script src="./product-showcase.js"></script>
+</body>
+
+</html>

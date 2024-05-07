@@ -1,0 +1,98 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    padding: 3rem;
+    overflow: hidden;
+    height: 100dvh;
+
+}
+
+
+main {
+    padding: 2rem;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.main-view img {
+    height: 500px;
+    width: 500px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 4px 4px 20px 0px #9c38f8;
+
+}
+
+.img-container {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 500px;
+    margin-top: -86px;
+}
+
+.img-container img {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 1;
+    border-radius: 10px;
+}
+
+.img-container li img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+/* Delay remaining card movement */
+::view-transition-group(*) {
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.1s;
+    animation-duration: 0.2s;
+}
+
+/* Delay container shrinking (shrink after cards have moved) */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-delay: 0.2s;
+    animation-duration: 0s;
+    /* Skip the cross-fade animation, resize instantly */
+}
+
+/* Adjust movement animation duration */
+::view-transition-group(card-active) {
+    animation-duration: .4s;
+    animation-delay: 0s;
+}
+
+/* Apply custom keyframe animation to old and new state */
+::view-transition-image-pair(card-active) {
+    /* Bounce effect is achieved with custom cubic-bezier function */
+    animation-timing-function: cubic-bezier(0.7, 2.2, 0.5, 2.2);
+}
