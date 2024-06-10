@@ -1,0 +1,49 @@
+ const image = new Image();
+    image.src =
+      "https://plus.unsplash.com/premium_photo-1716767947386-42c775d3d2de?q=80&w=3728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
+    const scaleX = width / image.width;
+    const scaleY = height / image.height;
+
+    // Use the larger scale factor to ensure the entire canvas is filled
+    const scale = Math.max(scaleX, scaleY);
+
+    // Calculate the new width and height based on the chosen scale
+    const newWidth = image.width * scale;
+    const newHeight = image.height * scale;
+
+    // Draw the image centered on the canvas
+    context.drawImage(
+      image,
+      -(newWidth - width) / 2, // X offset for centering (might be negative)
+      -(newHeight - height) / 2, // Y offset for centering (might be negative)
+      newWidth,
+      newHeight
+    );
+
+    const blobRadius = Math.min(width, height) / 6; // Adjust radius as needed
+      const blobCenterX = width / 2;
+      const blobCenterY = height / 2;
+      const blobColor = 'lightblue';
+
+      // Draw the blob circle
+      context.beginPath();
+      context.fillStyle = blobColor;
+      context.arc(blobCenterX, blobCenterY, blobRadius, 0, 2 * Math.PI);
+      // Add some randomness for a blob-like effect (optional)
+      for (let i = 0; i < 10; i++) {
+        const offsetX = Math.random() * 20 - 10;
+        const offsetY = Math.random() * 20 - 10;
+        context.lineTo(blobCenterX + offsetX, blobCenterY + offsetY);
+      }
+      context.closePath();
+      context.fill();
+
+      // Text on top of the blob circle
+      const text = 'Your Text Here'; // Replace with your text
+      const fontSize = blobRadius / 6; // Adjust font size as needed
+      context.font = `${fontSize}px sans-serif`;
+      context.fillStyle = 'white';
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      context.fillText(text, blobCenterX, blobCenterY);

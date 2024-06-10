@@ -1,4 +1,4 @@
-const mainImage = document.getElementById("main-image");
+// const mainImage = document.getElementById("main-image");
 const listImages = document.querySelectorAll("#list-img.img-container img");
 Array.from(listImages).forEach((car, index) => {
   car.style.viewTransitionName = `car-${index + 1}`;
@@ -19,3 +19,5 @@ async function moveCar(index) {
   await transition1.finished;
   await transition2.finished;
 }
+
+var t =10

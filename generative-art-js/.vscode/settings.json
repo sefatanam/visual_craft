@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "javascript.format.enable": true,
+    "js/ts.implicitProjectConfig.checkJs": true,
+    "js/ts.implicitProjectConfig.strictNullChecks": true,
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "javascript.suggestionActions.enabled": true
+}
