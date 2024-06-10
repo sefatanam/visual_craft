@@ -8,8 +8,8 @@ const settings = {
 };
 
 const sketch = () => {
+  const pallete = random.pick(palettes);
   const createGrid = () => {
-    const pallete = random.pick(palettes);
     const points = [];
     const count = 25;
     for (let x = 0; x < count; x++) {
@@ -20,8 +20,7 @@ const sketch = () => {
           u,
           v,
           color: random.pick(pallete),
-          radius:
-            random.value() * random.pick([0.015, 0.025, 0.005, 0.001, 0.03]),
+          radius: Math.max(0, random.gaussian() * 0.03),
         };
 
         points.push(data);
@@ -35,7 +34,7 @@ const sketch = () => {
   const margin = 400;
 
   return ({ context, width, height }) => {
-    context.fillStyle = "white";
+    context.fillStyle = random.pick(pallete);
     context.fillRect(0, 0, width, height);
 
     points.forEach((data) => {
