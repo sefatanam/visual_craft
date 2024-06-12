@@ -68,9 +68,9 @@ function loadCirle(canvas) {
     const y = lerp(margin, canvas.height - margin, v);
     // art
     ctx.beginPath();
-    ctx.arc(x, y, radius * 30, 0, Math.PI * 2, false);
+    ctx.arc(x, y, radius * 10, 0, Math.PI * 2, false);
     ctx.strokeStyle = localStorage.getItem("enableColor") ? color : "black";
-    ctx.lineWidth = 4;
+    ctx.lineWidth = 20;
     ctx.fillStyle = color;
     ctx.stroke();
   });
