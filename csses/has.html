@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Has</title>
+</head>
+
+<body>
+
+    <style>
+        :root{
+            --color:rgba(255, 188, 64, 0.921);
+        }
+        body{
+            font-family: system-ui;
+        }
+        .icon {
+            --size: 100px;
+            height: var(--size);
+            width: var(--size);
+            border-radius: calc(var(--size) / 5);
+            border: 1px dashed;
+            display: flex;
+            align-items: center;
+            justify-content: center;   
+            aspect-ratio: 1;        
+            transition: all 0.3s ease-in-out;
+        }
+
+        .icon:hover{
+            background: var(--color);
+        }
+
+        .icon:hover .text{
+            transition: scale 0.3s ease-in-out;
+            scale: 2.15;
+        }
+
+        .container {
+            width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        h1{
+            position: relative;
+            display: inline-block;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            padding: 0.15rem 0.25rem;
+            
+        }
+        h1::after{
+            position: absolute;
+            content: "";
+            background-color: var(--color);
+            z-index: -1;
+            width: 0;
+            transition: width 0.3s ease;
+            inset: 0;
+        }
+
+        /* Parent selector */
+        /* body:has(.icon:hover){
+            transition: scale 0.3s ease-in-out;
+            background: rgb(255, 225, 221);
+        } */
+
+        body:has(.icon:hover) h1::after{
+            width: 100%;
+        }
+
+        /* Adjacent sibling selector */
+        /* .icon:hover + .icon{
+            background-color: salmon;
+        } */
+
+        /* .icon:hover ~ .icon{
+            background-color: salmon;
+        } */
+
+        /* all but not me */
+        /* .container:has(.icon:hover) .icon:not(:hover){
+            background-color: var(--color);
+
+            opacity: 0.5; 
+            filter: sepia(100%); 
+        } */
+
+        /* .icon:hover + .icon{
+            background-color: salmon;
+        }
+        .icon:has( + .icon:hover){
+            background-color: var(--color);
+        } */
+
+        .container:has(.icon:hover) .icon:not(:hover){
+            background-color: green;
+        }
+        
+    </style>
+
+    <h1>:has - Selector</h1>
+    <div class="container">
+        <div class="icon">
+            <div class="text">1</div>
+        </div>
+        <div class="icon">
+            <div class="text">2</div>
+        </div>
+        <div class="icon">
+            <div class="text">3</div>
+        </div>
+        <div class="icon">
+            <div class="text">4</div>
+        </div>
+        <div class="icon">
+            <div class="text">5</div>
+        </div>
+        <div class="icon">
+            <div class="text">6</div>
+        </div>
+        <div class="icon">
+            <div class="text">7</div>
+        </div>
+        <div class="icon">
+            <div class="text">8</div>
+        </div>
+        <div class="icon">
+            <div class="text">9</div>
+        </div>
+        <div class="icon">
+            <div class="text">10</div>
+        </div>
+        <div class="icon">
+            <div class="text">11</div>
+        </div>
+        <div class="icon">
+            <div class="text">12</div>
+        </div>
+        <div class="icon">
+            <div class="text">13</div>
+        </div>
+        <div class="icon">
+            <div class="text">14</div>
+        </div>
+        <div class="icon">
+            <div class="text">15</div>
+        </div>
+        <div class="icon">
+            <div class="text">16</div>
+        </div>
+        <div class="icon">
+            <div class="text">17</div>
+        </div>
+        <div class="icon">
+            <div class="text">18</div>
+        </div>
+        <div class="icon">
+            <div class="text">19</div>
+        </div>
+        <div class="icon">
+            <div class="text">20</div>
+        </div>
+        <div class="icon">
+            <div class="text">21</div>
+        </div>
+        <div class="icon">
+            <div class="text">22</div>
+        </div>
+        <div class="icon">
+            <div class="text">23</div>
+        </div>
+        <div class="icon">
+            <div class="text">24</div>
+        </div>
+        <div class="icon">
+            <div class="text">25</div>
+        </div>
+        <div class="icon">
+            <div class="text">26</div>
+        </div>
+        <div class="icon">
+            <div class="text">27</div>
+        </div>
+        <div class="icon">
+            <div class="text">28</div>
+        </div>
+        <div class="icon">
+            <div class="text">29</div>
+        </div>
+        <div class="icon">
+            <div class="text">30</div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

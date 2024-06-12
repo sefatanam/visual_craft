@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        :root {
+            --color: rgba(255, 188, 64, 0.921);
+        }
+
+        body {
+            font-family: system-ui;
+        }
+
+        .container {
+            width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .list{
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .item{
+            color: var(--color);
+            border: 1px solid currentColor;
+            padding: 1rem;
+            width: 300px;
+            /* box-shadow: -7px -9px 0px 0px var(--color); */
+            box-shadow: -7px -9px 0px 0px currentColor;
+        }
+    </style>
+
+    <h1>
+        currentColor - Property
+    </h1>
+
+    <main class="container">
+        <ul class="list">
+            <li class="item" style="--color:red">Follow us on youtube</li>
+            <li class="item" style="--color:blue">Follow us on facebook</li>
+            <li class="item" style="--color:purple">Follow us on instagram</li>
+            <li class="item" style="--color:black">Follow us on thread</li>
+            <li class="item" style="--color:cornflowerblue">Follow us on twitter(X)</li>
+        </ul>
+
+    </main>
+
+
+</body>
+
+</html>
