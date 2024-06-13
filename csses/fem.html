@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fem - Class</title>
+    <style>
+        :root{
+            --primary-color:hsl(250 30% 40%);
+            --secondary-color:hsl(190  40% 40%);
+            --tined-background: hsl(0 0% 100%/.8);
+            font-family: system-ui;
+            color-scheme: light dark;
+        }
+
+        body{
+            display: grid;
+            grid-template-columns: repeat(auto-fit , minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+       
+
+        .card{
+            
+            border-radius: .7rem;
+            background-color: var(--primary-color);
+            margin-block-end: 1rem;
+            overflow: hidden;
+        }
+
+        .card h1{
+            /* color: white; */
+            color: canvas;
+            padding: 0.2rem .3rem;
+            font-size: 1.5rem;
+        }
+
+        .card p{
+            background: var(--tined-background);
+            margin: 0;
+            padding: 1rem;
+        }
+       
+        @media (prefers-color-scheme:dark) {
+            :root{
+                --primary-color:hsl(250 30% 60%);
+                --secondary-color:hsl(190  40% 60%);
+                --tined-background: hsl(0 0% 100%/.4);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>CSS - Inheritance </h1>
+    
+    <div class="card one">
+        <h1>Heading</h1>
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique blanditiis excepturi ipsa ad eum.
+        Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae, temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet ad dignissimos?</p>
+    </div>
+    <div class="card two">
+        <h1>Heading</h1>
+
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique blanditiis excepturi ipsa ad eum.
+        Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae, temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet ad dignissimos?</p>
+    </div>
+    <div class="card three">
+        <h1>Heading</h1>
+
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique blanditiis excepturi ipsa ad eum.
+        Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae, temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet ad dignissimos?</p>
+    </div>
+    <div class="card four">
+        <h1>Heading</h1>
+
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique blanditiis excepturi ipsa ad eum.
+        Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae, temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet ad dignissimos?</p>
+    </div>
+    <div class="card five">
+        <h1>Heading</h1>
+
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique blanditiis excepturi ipsa ad eum.
+        Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae, temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet ad dignissimos?</p>
+    </div>
+</body>
+</html>
