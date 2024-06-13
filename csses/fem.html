@@ -1,89 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fem - Class</title>
     <style>
-        :root{
-            --primary-color:hsl(250 30% 40%);
-            --secondary-color:hsl(190  40% 40%);
+        :root {
+            --primary-color: hsl(250 30% 40%);
+            --secondary-color: hsl(190 40% 40%);
             --tined-background: hsl(0 0% 100%/.8);
             font-family: system-ui;
             color-scheme: light dark;
         }
 
-        body{
+        body {
             display: grid;
-            grid-template-columns: repeat(auto-fit , minmax(500px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
             gap: 2rem;
         }
 
-       
 
-        .card{
-            
+
+        .card {
+
             border-radius: .7rem;
             background-color: var(--primary-color);
             margin-block-end: 1rem;
             overflow: hidden;
+            --corner-size: 2em;
+
         }
 
-        .card h1{
+        .card h1 {
             /* color: white; */
             color: canvas;
             padding: 0.2rem .3rem;
             font-size: 1.5rem;
         }
 
-        .card p{
+        .card p {
             background: var(--tined-background);
             margin: 0;
             padding: 1rem;
         }
-       
+
+        .text {
+            /* --corner-size:5em; */
+            --corner-size: inherit;
+        }
+
         @media (prefers-color-scheme:dark) {
-            :root{
-                --primary-color:hsl(250 30% 60%);
-                --secondary-color:hsl(190  40% 60%);
+            :root {
+                --primary-color: hsl(250 30% 60%);
+                --secondary-color: hsl(190 40% 60%);
                 --tined-background: hsl(0 0% 100%/.4);
             }
         }
 
+        @property --corner-size {
+            syntax: "*";
+            inherits: false;
+        }
+
+        * {
+            /* --corner-size:initial; */
+            clip-path: polygon(calc(100% - var(--corner-size)) 0,
+                    100% var(--corner-size),
+                    100% 100%, 0 100%, 0 0);
+        }
+
+        .pie-chart {
+            --_size: var(--size, 500px);
+             height: var(--_size);
+            width: var(--_size);
+            border-radius: 50%;
+
+            --_color1: var(--color1, hsl(0 80% 50%));
+            --_color2: var(--color2, hsl(25 80% 50%));
+            --_color3: var(--color3, hsl(50 80% 50%));
+            --_color4: var(--color4, hsl(75 80% 50%));
+
+            --_value1: var(--value1, 0);
+            --_value2: calc(var(--_value1) + var(--value2));
+            --_value3: calc(var(--_value2) + var(--value3, 0));
+            --_value4: calc(var(--_value3) + var(--value4, 0));
+
+            --_coordinate1: var(--_color1) 0 var(--_value1);
+            --_coordinate2: var(--_color2) 0 var(--_value2);
+            --_coordinate3: var(--_color3) 0 var(--_value3);
+            --_coordinate4: var(--_color4) 0 var(--_value4);
+
+
+            background: conic-gradient(var(--_coordinate1),
+                    var(--_coordinate2),
+                    var(--_coordinate3),
+                    var(--_coordinate4),
+                    canvastext 0);
+
+        }
     </style>
 </head>
+
 <body>
-    
-    <h1>CSS - Inheritance </h1>
-    
+
+        <div class="pie-chart" style="
+    --size:400px;
+    --color3: indianred;
+    --value1:20%;
+    --value2:10%;
+    --value3:30%;
+    --value4:30%;
+    --color1:blue
+    ">
+    </div>
+
     <div class="card one">
         <h1>Heading</h1>
-        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique blanditiis excepturi ipsa ad eum.
-        Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae, temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet ad dignissimos?</p>
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi
+            expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique
+            blanditiis excepturi ipsa ad eum.
+            Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae,
+            temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet
+            ad dignissimos?</p>
     </div>
     <div class="card two">
         <h1>Heading</h1>
 
-        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique blanditiis excepturi ipsa ad eum.
-        Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae, temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet ad dignissimos?</p>
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi
+            expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique
+            blanditiis excepturi ipsa ad eum.
+            Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae,
+            temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet
+            ad dignissimos?</p>
     </div>
     <div class="card three">
         <h1>Heading</h1>
 
-        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique blanditiis excepturi ipsa ad eum.
-        Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae, temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet ad dignissimos?</p>
+        <p class="text alt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem
+            sequi expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique
+            blanditiis excepturi ipsa ad eum.
+            Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae,
+            temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet
+            ad dignissimos?</p>
     </div>
     <div class="card four">
         <h1>Heading</h1>
 
-        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique blanditiis excepturi ipsa ad eum.
-        Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae, temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet ad dignissimos?</p>
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi
+            expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique
+            blanditiis excepturi ipsa ad eum.
+            Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae,
+            temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet
+            ad dignissimos?</p>
     </div>
     <div class="card five">
         <h1>Heading</h1>
 
-        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique blanditiis excepturi ipsa ad eum.
-        Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae, temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet ad dignissimos?</p>
+        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sed aliquid, autem sequi
+            expedita obcaecati dolorum accusantium qui dolore rem similique cumque possimus. Voluptas similique
+            blanditiis excepturi ipsa ad eum.
+            Nam iste dolor minus repellat rem inventore perspiciatis incidunt eaque, placeat cumque repudiandae,
+            temporibus tempora ad quasi nihil distinctio ea, nobis necessitatibus! Harum fuga quaerat expedita vel amet
+            ad dignissimos?</p>
     </div>
+
+
+
 </body>
+
 </html>
