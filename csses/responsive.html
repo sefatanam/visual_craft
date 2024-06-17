@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            width: 1280px;
+            margin: 0 auto;
+            font-family: system-ui;
+        }
+
+        body {
+            --gutter: 0.3em;
+            display: grid;
+            /* gap: 0.3em; */
+            gap: var(--gutter);
+            /* font-size: 90%; */
+            font-size: calc(90% * var(--font-scale, 1));
+            /* --font-large:110%; */
+            grid-template-columns: repeat(var(--columns,1), 1fr);
+
+        }
+
+        section {
+            background: silver;
+            /* padding: 1.2em; */
+            padding: calc(0.6em + var(--gutter) *2);
+        }
+
+        section:nth-of-type(3n+4) {
+            background-color: #f06;
+            color: hsl(0 0% 100%);
+            grid-column-end: span var(--columns);
+
+        }
+
+        section:nth-last-of-type(2) {
+            background-color: orange;
+            grid-column-end: span calc(var(--columns) - 1);
+
+        }
+
+        @media (min-width: 600px) {
+            body {
+                /* gap: 0.5em; */
+                --gutter: 0.5em;
+                /* font-size: var(--font-large); */
+                --font-scale:1.8;
+                /* grid-template-columns: repeat(3, 1fr); */
+                --columns:3;
+            }
+
+           /*  section:nth-of-type(3n+4) {
+                grid-column-end: span 3;
+            }
+
+            section:nth-last-of-type(2) {
+                grid-column-end: span 2;
+            } */
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h1>One</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium libero velit accusamus doloremque dicta,
+            facere at expedita reiciendis recusandae placeat earum similique exercitationem sint porro nihil saepe,
+            perspiciatis qui dignissimos.</p>
+    </section>
+    <section>
+        <h1>Two</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium libero velit accusamus doloremque dicta,
+            facere at expedita reiciendis recusandae placeat earum similique exercitationem sint porro nihil saepe,
+            perspiciatis qui dignissimos.</p>
+    </section>
+    <section>
+        <h1>Three</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium libero velit accusamus doloremque dicta,
+            facere at expedita reiciendis recusandae placeat earum similique exercitationem sint porro nihil saepe,
+            perspiciatis qui dignissimos.</p>
+    </section>
+    <section>
+        <h1>Four</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium libero velit accusamus doloremque dicta,
+            facere at expedita reiciendis recusandae placeat earum similique exercitationem sint porro nihil saepe,
+            perspiciatis qui dignissimos.</p>
+    </section>
+    <section>
+        <h1>Five</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium libero velit accusamus doloremque dicta,
+            facere at expedita reiciendis recusandae placeat earum similique exercitationem sint porro nihil saepe,
+            perspiciatis qui dignissimos.</p>
+    </section>
+    <section>
+        <h1>Sixf</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium libero velit accusamus doloremque dicta,
+            facere at expedita reiciendis recusandae placeat earum similique exercitationem sint porro nihil saepe,
+            perspiciatis qui dignissimos.</p>
+    </section>
+</body>
+
+</html>
