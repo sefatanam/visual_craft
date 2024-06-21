@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* border: 1px dashed; */
+        }
+
+        :root {
+            --bg-color: hsl(0 0% 100% / 0.6);
+            --_margin-size: var(--margin-size, 0.65em);
+        }
+
+        html {
+            width: 1280px;
+            margin: 0 auto;
+            font-family: system-ui;
+            /* color-scheme: light dark; */
+            background: rgb(247, 191, 191);
+        }
+
+        .card {
+            --width: 30rem;
+            --padding: 1rem;
+            --_border: calc(var(--padding, 0.5) / 2);
+            --btn-position: right;
+            width: var(--width);
+            background: var(--bg-color);
+            padding: var(--padding);
+            border-radius: var(--_border);
+
+        }
+
+        .card h2 {
+            padding-block-end: 10px;
+            margin-block-end: 10px;
+            border-bottom: 1px solid;
+        }
+
+        @scope(.light, .dark) {
+            & {
+                display: inline-block;
+                padding-block-end: var(--_margin-size);
+                margin-block-end: var(--_margin-size);
+            }
+        }
+
+        @scope(.light) {
+            a {
+                color: black;
+                background: white;
+                padding: 1rem;
+                float: var(--btn-position);
+            }
+        }
+
+        @scope(.dark) {
+            a {
+                color: aliceblue;
+                background: black;
+                padding: 1rem;
+                float: var(--btn-position);
+            }
+        }
+
+        @media (max-width:600px) {
+            .card{
+                --btn-position: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+
+    <article class="card">
+        <h2>Heading 2</h2>
+        <div class="light">
+            <h4>Heading 4</h4>
+            <p class="dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, id itaque amet culpa animi
+                autem dignissimos
+                reprehenderit nostrum. Odio soluta omnis ab quam quia inventore maxime consectetur ducimus tempore
+                ratione?
+            </p>
+            <a href="">Link 4</a>
+        </div>
+        <div class="dark">
+            <h4>Heading 4</h4>
+            <p class="light">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, id itaque amet culpa animi
+                autem dignissimos
+                reprehenderit nostrum. Odio soluta omnis ab quam quia inventore maxime consectetur ducimus tempore
+                ratione?
+            </p>
+            <a href="">Link 5</a>
+        </div>
+    </article>
+</body>
+
+</html>
