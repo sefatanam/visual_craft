@@ -74,21 +74,21 @@
         }
 
         /* Adjacent sibling selector */
-        /* .icon:hover + .icon{
+        .icon:hover + .icon{
             background-color: salmon;
-        } */
+        }
 
         /* .icon:hover ~ .icon{
             background-color: salmon;
         } */
 
         /* all but not me */
-        /* .container:has(.icon:hover) .icon:not(:hover){
+        .container:has(.icon:hover) .icon:not(:hover){
             background-color: var(--color);
 
             opacity: 0.5; 
             filter: sepia(100%); 
-        } */
+        }
 
         /* .icon:hover + .icon{
             background-color: salmon;
@@ -97,9 +97,9 @@
             background-color: var(--color);
         } */
 
-        .container:has(.icon:hover) .icon:not(:hover){
+        /* .container:has(.icon:hover) .icon:not(:hover){
             background-color: green;
-        }
+        } */
         
     </style>
 

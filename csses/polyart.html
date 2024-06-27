@@ -7,6 +7,11 @@
     <title>Document</title>
 
     <style>
+        :root {
+            color-scheme: light dark;
+            font-family: system-ui;
+        }
+
         #fantasy-land {
             will-change: auto;
             position: fixed;
@@ -58,16 +63,55 @@
             transition: all ease-out .5s;
             transform: scale(1);
         }
+
+        main {
+            display: grid;
+            place-items: center;
+            height: 100dvh;
+            gap: 1em;
+        }
+        .container{
+            padding: 1rem 3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid #ffffff12;
+            background-color: #ffffff12;
+            border-radius: 10px;
+            margin-block: 1em;
+        }
     </style>
 </head>
 
 <body>
 
-    <section data-v-413fea4d="" id="fantasy-land" style="--blur: blur(170px); --opacity: 0.44; ">
-        <section data-v-413fea4d="" class="g-polygon-1"></section>
-        <section data-v-413fea4d="" class="g-polygon-2"></section>
-        <section data-v-413fea4d="" class="g-polygon-3"></section>
-    </section>
+
+
+    <main>
+        <section data-v-413fea4d="" id="fantasy-land" style="--blur: blur(170px); --opacity: 0.44; ">
+            <section data-v-413fea4d="" class="g-polygon-1"></section>
+            <section data-v-413fea4d="" class="g-polygon-2"></section>
+            <section data-v-413fea4d="" class="g-polygon-3"></section>
+        </section>
+        <div class="container">
+            <article class="container">
+                <h1>Polyart - Background</h1>
+                <div>
+                    Control flow
+                </div>
+            </article>
+            <article class="container">
+                <h1>Polyart - Background</h1>
+                <div>
+                    Control flow
+                </div>
+            </article>
+            <article class="container">
+                <h1>Polyart - Background</h1>
+                <div>
+                    Control flow
+                </div>
+            </article>
+        </div>
+    </main>
 </body>
 
 </html>
