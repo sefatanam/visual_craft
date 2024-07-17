@@ -8,7 +8,7 @@ const sketch = () => {
   return ({ context, width, height }) => {
     var img = new Image();
     img.src =
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRYvghBCnP9a0OZ_LNvc9F8AoVth3_3A4XfA&s";
+      "https://plus.unsplash.com/premium_photo-1715876267901-617fcb78efa1?q=80&w=3872&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
     img.onload = function () {
       var canvasAspect = width / height;
       var imageAspect = img.width / img.height;
@@ -42,43 +42,80 @@ const sketch = () => {
       context.fillRect(0, 0, width, height); */
       // Overlay a wavy, semi-transparent shape
       // context.fillStyle = "#0000007d"; // Semi-transparent color
-      const gradient = context.createLinearGradient(20, 0, 220, 0);
+      // const margin = 1 / 4;
 
-      // Add three color stops
-      gradient.addColorStop(0, "#0000005d");
-      gradient.addColorStop(0.7, "#0000006d");
-      gradient.addColorStop(1, "#0000007d");
+      // Off-white background
+      // context.fillStyle = "hsl(0, 0%, 98%)";
+      // context.fillRect(0, 0, width, height);
 
-      // Set the fill style and draw a rectangle
-      context.fillStyle = gradient;
+      // Gradient foreground
+      // const fill = context.createLinearGradient(0, 0, width, height);
+      // fill.addColorStop(0, "cyan");
+      // fill.addColorStop(1, "blue");
+
+      // Fill rectangle
+      // context.fillStyle = fill;
+      // context.fillRect(margin, margin, width - margin * 2, height - margin * 2);
+
+      // Bottom curve
+      // Bottom curve
+      context.fillStyle = "rgb(247, 122, 5,0.6)"; // Red color for the bottom curve
       context.beginPath();
-      context.moveTo(0, height * 0.75);
+      context.moveTo(0, height * 0.75); // Starting point on the left at 75% height
       context.bezierCurveTo(
-        width * 0.25,
-        height * 0.65,
+        width * 0.35,
+        height, // Control point 1 (left hill)
         width * 0.75,
-        height * 0.85,
+        height * 0.45, // Control point 2 (right hill)
         width,
-        height * 0.75
+        height // Ending point on the right at 75% height
       );
-      context.lineTo(width, height);
-      context.lineTo(0, height);
+      context.lineTo(width, height); // Draw a straight line down to the bottom-right corner
+      context.lineTo(0, height); // Draw a straight line to the bottom-left corner
       context.closePath();
       context.fill();
 
-      context.fillStyle = "#0000007d"; // Semi-transparent color
+      // Top curve
+      /* context.fillStyle = "white"; // Red color for the top curve
+    context.beginPath();
+    context.moveTo(0, 0); // Starting point at the top-left corner
+    context.lineTo(width * 0.5, 0); // Draw a straight line to the right (50% of the width)
+    context.bezierCurveTo(
+      width * 0.25,
+      height * 0.15,
+      width * 0.25,
+      height * 0.05,
+      width * 0.015,
+      height * 0.25
+    );
+    context.lineTo(0, height * 0.15); // Draw a straight line down to the bottom left corner of the curve
+    context.lineTo(0, width); // Draw a straight line to the bottom-left corner
+
+    context.closePath();
+    context.fill(); */
+
+      context.fillStyle = "rgb(247, 122, 5,0.6)"; // Red color for the top curve
       context.beginPath();
-      context.moveTo(0, height * 0.25);
+      context.moveTo(0, 0); // Starting point at the top-left corner
+      context.lineTo(width * 0.65, 0); // Draw a straight line to the right (50% of the width)
+      /*  context.bezierCurveTo(
+      width * 0.25, // First control point (horizontally centered between start and end points)
+      0, // First control point (higher to create a pronounced curve)
+      width * 0.25, // Second control point (horizontally centered between start and end points)
+      height * 0.2, // Second control point (higher to create a pronounced curve)
+      0, // Ending point (back to the left)
+      height * 0.25 // Ending point (at 25% height)
+    ); */
+
       context.bezierCurveTo(
-        width * 0.25,
-        height * 0.35,
-        width * 0.75,
-        height * 0.15,
-        width,
-        height * 0.25
+        height * 0.15, // First control point (horizontally centered between start and end points)
+        width * 0.029,
+        height * 0.15, // First control point (higher to create a pronounced curve)
+        width * 0.29, // Second control point (horizontally centered between start and end points)
+        0, // Ending point (back to the left)
+        height * 0.25 // Ending point (at 25% height)
       );
-      context.lineTo(width, 0);
-      context.lineTo(0, 0);
+      context.lineTo(0, 0); // Draw a straight line up to the starting point
       context.closePath();
       context.fill();
 
